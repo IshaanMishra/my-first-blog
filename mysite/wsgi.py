@@ -8,9 +8,17 @@ https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/
 """
 
 import os
-
+import django
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
+
+path = os.path.expanduser('~/djangogirls/mysite')
+
+#if path not in sys.path:
+	#pass
+	#sys.path.insert(0,path)
+
+
+os.environ["DJANGO_SETTINGS_MODULE"] = 'mysite.settings'
 
 application = get_wsgi_application()
